@@ -1,40 +1,67 @@
 video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
-  }
-  .get-head{
-      height: 100vh;
-  }
-  .get-head > h1 {
-    color: #fff;
-    font-size: 100px;
-    margin-top: -100px;
-    font-weight: bold;
-  }
-  .get-head > p {
-    margin-top: 8px;
-    color: #fff;
-    font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-      'Lucida Sans', Arial, sans-serif;
-  }
-  .get-btn{
-      margin: 20px;
-      padding: 12px 26px;
-  font-size: 20px;
-      outline: none;
-      border: 2px solid white;
-      cursor: pointer;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.get-head {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive Headings */
+.get-head > h1 {
+  color: #fff;
+  font-size: 5rem; /* Scalable font size */
+  font-weight: bold;
+  text-align: center;
+}
+
+.get-head > p {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* Responsive Button */
+.get-btn {
+  margin: 20px;
+  padding: 12px 26px;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px solid white;
+  cursor: pointer;
   background-color: transparent;
   color: white;
+  transition: all 0.3s ease-out;
+}
 
-  }
-.get-btn:hover{
-    transition: all 0.3s ease-out;
+.get-btn:hover {
   background: #fff;
   color: #242424;
-  transition: 250ms;
+}
+
+/* 📱 Mobile & Tablet Responsiveness */
+@media screen and (max-width: 768px) {
+  .get-head > h1 {
+    font-size: 3rem; /* Smaller heading */
+  }
+
+  .get-head > p {
+    font-size: 1.2rem;
+  }
+
+  .get-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
 }

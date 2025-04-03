@@ -1,18 +1,62 @@
-.home-right {
-  height: 100vh;
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-/* .home-img {
+
+.home-left,
+.home-right {
+  flex: 1;
+  min-height: 50vh;
+}
+
+/* Background Gradient */
+.home-left {
+  background: linear-gradient(
+    to left,
+    rgba(0, 180, 255, 0),
+    rgba(0, 180, 255, 1)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Heading Styles */
+.home-head h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+
+.head-bold {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* Image Styling */
+.home-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.home-img img {
+  width: 80%;
+  max-width: 400px;
   animation: moveright 1.2s linear 1;
   visibility: hidden;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
-} */
-.home-img {
-  height: 80%;
+  animation-delay: 0.5s;
 }
+
+/* Keyframe Animations */
 @keyframes moveright {
   0% {
-    transform: translateX(-200px);
+    transform: translateX(-100px);
     visibility: visible;
   }
   100% {
@@ -20,18 +64,17 @@
     visibility: visible;
   }
 }
-.home-head h1 {
-  margin-top: -150px;
-}
+
 .home-head {
   animation: zoomin 0.8s linear 1;
   visibility: hidden;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
+
 @keyframes zoomin {
   0% {
-    transform: scale(0.5);
+    transform: scale(0.8);
     visibility: visible;
   }
   100% {
@@ -39,21 +82,29 @@
     visibility: visible;
   }
 }
-.home-left {
-  background-image: linear-gradient(
-    to left,
-    rgba(0, 180, 255, 0),
-    rgba(0, 180, 255, 1)
-  );
-  background-size: 50% 100%;
-  background-repeat: no-repeat;
-}
-.head-bold {
-  font-weight: 800;
-  font-size: larger;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-.headline {
-  font-weight: 200;
+
+/* 📱 Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .home-page {
+    flex-direction: column;
+  }
+
+  .home-left,
+  .home-right {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .home-head h1 {
+    font-size: 2rem;
+  }
+
+  .head-bold {
+    font-size: 1.8rem;
+  }
+
+  .home-img img {
+    width: 90%;
+    max-width: 300px;
+  }
 }

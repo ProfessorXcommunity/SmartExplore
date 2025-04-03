@@ -1,28 +1,83 @@
+/* Navbar Brand Animation */
 .navbar-brand {
-  animation: moveright 0.5s linear 1;
-  /* animation-duration: 2s; */
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: 2px solid black;
+  padding: 5px 15px;
+  transition: all 0.3s ease-in-out;
+  animation: moveRight 0.5s ease-in-out;
 }
-@keyframes moveright {
+
+.navbar-brand:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Keyframe Animations */
+@keyframes moveRight {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-50px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0px);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
+
+/* Navbar Link Styling */
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+/* Mobile Menu Button */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Navbar Animation */
 .navbar-nav {
-  animation: movedown 0.5s linear 1;
-  /* animation-delay: 0.5s; */
+  animation: moveDown 0.5s ease-in-out;
   visibility: hidden;
   animation-fill-mode: forwards;
 }
-@keyframes movedown {
+
+@keyframes moveDown {
   0% {
-    transform: translateY(-100px);
-    visibility: visible;
+    transform: translateY(-20px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
+    opacity: 1;
     visibility: visible;
+  }
+}
+
+/* 📱 Responsive Styles */
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px;
+    display: block;
   }
 }

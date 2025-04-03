@@ -10,18 +10,26 @@ import memories from "../../images/memories.png";
 import Navbar from "../connections/Navbar";
 
 const MemoryApp = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
   const classes = useStyles();
 
   useEffect(() => {
-    dispatch(getPosts());
-  }, [currentId, dispatch]);
+    const fetchData = async () => {
+      try {
+        await dispatch(getPosts());
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchData();
+  }, [dispatch]);
 
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" className="memory-bg">
+      <Container maxWidth="lg" className={classes.memoryBg}>
         <AppBar className={classes.appBar} position="static" color="inherit">
           <Typography className={classes.heading} variant="h2" align="center">
             Memories
@@ -37,7 +45,7 @@ const MemoryApp = () => {
           <Container>
             <Grid
               container
-              justify="space-between"
+              justifyContent="space-between"
               alignItems="stretch"
               spacing={3}
             >
