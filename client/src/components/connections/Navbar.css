@@ -1,0 +1,28 @@
+.navbar-brand {
+  animation: moveright 0.5s linear 1;
+  /* animation-duration: 2s; */
+}
+@keyframes moveright {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.navbar-nav {
+  animation: movedown 0.5s linear 1;
+  /* animation-delay: 0.5s; */
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+@keyframes movedown {
+  0% {
+    transform: translateY(-100px);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0px);
+    visibility: visible;
+  }
+}

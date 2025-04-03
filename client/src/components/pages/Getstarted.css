@@ -1,0 +1,40 @@
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+  .get-head{
+      height: 100vh;
+  }
+  .get-head > h1 {
+    color: #fff;
+    font-size: 100px;
+    margin-top: -100px;
+    font-weight: bold;
+  }
+  .get-head > p {
+    margin-top: 8px;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+  .get-btn{
+      margin: 20px;
+      padding: 12px 26px;
+  font-size: 20px;
+      outline: none;
+      border: 2px solid white;
+      cursor: pointer;
+  background-color: transparent;
+  color: white;
+
+  }
+.get-btn:hover{
+    transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
